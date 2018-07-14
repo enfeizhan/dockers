@@ -1,0 +1,12 @@
+version: "3"
+services:
+  mysql-server:
+    container_name: mysql-server
+    image: mysql:5.7.22
+    ports:
+      - 3306:3306
+    volumes:
+      - /root/containers/mysql/mysql-datadir:/var/lib/mysql
+      - /root/containers/mysql/conf.d:/etc/mysql/conf.d
+    env_file:
+      - .env

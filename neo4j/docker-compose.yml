@@ -1,0 +1,12 @@
+version: "3"
+services:
+  neo4j-server:
+    container_name: neo4j-server
+    image: neo4j:3.4
+    ports:
+      - 7474:7474
+      - 7687:7687
+    volumes:
+      - /root/containers/neo4j/data:/data
+    env_file:
+      - .env
